@@ -1,0 +1,76 @@
+### API 1
+
+#### Scenario 1: Get todos with status 'TO DO'
+
+GET http://localhost:3000/todos/?status=TO%20DO
+
+### Scenario 2: Get todos with priority 'HIGH'
+
+GET http://localhost:3000/todos/?priority=HIGH
+
+### Scenario 3: Get todos with priority 'HIGH' and status 'IN PROGRESS'
+
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+
+### Scenario 4: Get todos containing 'Play' in the todo text
+
+GET http://localhost:3000/todos/?search_q=Play
+
+
+### API 2
+
+#### Get a specific todo based on the todo ID
+
+GET http://localhost:3000/todos/2
+
+
+### API 3
+
+#### Create a todo in the todo table
+
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+  "id": 10,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+
+
+### API 4
+
+#### Update the status of a specific todo
+
+PUT http://localhost:3000/todos/2
+Content-Type: application/json
+
+{
+  "status": "DONE"
+}
+
+#### Update the priority of a specific todo
+
+PUT http://localhost:3000/todos/2
+Content-Type: application/json
+
+{
+  "priority": "HIGH"
+}
+
+#### Update the todo text of a specific todo
+
+PUT http://localhost:3000/todos/2
+Content-Type: application/json
+
+{
+  "todo": "Some task"
+}
+
+
+### API 5
+
+#### Delete a specific todo
+
+DELETE http://localhost:3000/todos/2
